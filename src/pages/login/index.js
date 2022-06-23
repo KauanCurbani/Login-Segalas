@@ -1,25 +1,43 @@
 import { Page, LoginForm, Form } from "./style.js";
 import imgLogo from "../../assets/S-Vermelho.png";
-import { Link, useNavigate } from "react-router-dom";
 import users from "../../data/users.json";
+import { useNavigate } from "react-router-dom";
 
 function LoginPage() {
-  fetch(users).then(response => response.json()).then(obj => console.log(obj));
+  const navigate = useNavigate();
 
-  let navigate = useNavigate();
+  function entra() {
+    let usuario = document.querySelector("#user");
+    let pass = document.querySelector("#pass");
+    let listaUser = [];
 
-  function loginAdmin() {
-    var user = document.getElementById("user").value;
-    var pass = document.getElementById("pass").value;
+    let userValid = {
+      id: "",
+      Username: "",
+      Password: "",
+    };
 
-    if (user === "Admin" && pass === "Admin") {
-      navigate("/home", { replace: true });
-      console.log("ok!");
-    } else {
-      console.log("Não Logou!");
-      console.log(user, pass);
-    }
+    // listaUser = JSON.parse(localStorage.getItem(users));
+    listaUser = users.Usuarios;
+
+    listaUser.forEach((item) => {
+      if (usuario.value == item.Username && pass.value == item.Password) {
+        userValid = {
+          id: item.Id,
+          Username: item.Username,
+          Password: item.Password,
+        };
+      }
+    });
+
+    if (
+      usuario.value == userValid.Username &&
+      pass.value == userValid.Password
+    ) {
+      navigate("/home");
+    } else alert("Senha ou Usuário incorreta!");
   }
+
   return (
     <Page>
       <Form>
@@ -30,7 +48,7 @@ function LoginPage() {
             nós.
           </span>
         </div>
-        <form className="inputs" onSubmit={loginAdmin}>
+        <form className="inputs" onSubmit={entra}>
           <input type="text" id="user" placeholder="Usuário" />
           <input type="password" id="pass" placeholder="Senha" />
           <span>Esqueceu sua senha?</span>
