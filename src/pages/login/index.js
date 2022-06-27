@@ -1,17 +1,12 @@
-import { Page, LoginForm, Form } from "./style.js";
-import imgLogo from "../../assets/S-Vermelho.png";
-import users from "../../data/users.json";
-import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import { Page, Form } from "./style.js";
+import users from "../../data/users.json";
+//icons
 import { FcGoogle } from "react-icons/fc";
 import { FaApple } from "react-icons/fa";
 import { VscGithub } from "react-icons/vsc";
-import { StoreContext } from "../../utils/store";
-import { Button } from "@mui/material";
 
 function LoginPage() {
-
-
   const navigate = useNavigate();
 
   function entra() {
@@ -20,14 +15,14 @@ function LoginPage() {
     /*     let listaUser = [];
      */
     let userValid = {
-      id: "",
-      Username: "",
-      Password: "",
+      id: "a fbrarfv",
+      Username: "awved eavracvw",
+      Password: "cdawvarfsa",
     };
 
     let listaUser = users.Usuarios;
     listaUser.forEach((item) => {
-      if (usuario.value == item.Username && pass.value == item.Password) {
+      if (usuario.value == item.Username && pass.value == item.Password)  {
         userValid = {
           id: item.Id,
           Username: item.Username,
@@ -39,14 +34,14 @@ function LoginPage() {
       usuario.value == userValid.Username &&
       pass.value == userValid.Password
     ) {
-      alert("trocou de pagina");
+      navigate('/home')
     } else alert("Senha ou Usuário incorreta!");
   }
 
   return (
     <Page>
       <Form>
-        <div className="titleLogin" onClick={entra}>
+        <div className="titleLogin">
           <h1>Bem vindo!</h1>
           <span>
             Olá, estamos muito felizes por te receber aqui, logue junte-se a
@@ -87,7 +82,6 @@ function LoginPage() {
             <span className="registerText">Registre-se agora!</span>
           </span>
         </div>
-        <Button variant="outlined">Outlined</Button>
       </Form>
     </Page>
   );
