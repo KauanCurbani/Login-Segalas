@@ -1,13 +1,17 @@
-import React from 'react'
-import Header from '../../components/header';
+import React, { useContext } from "react";
+import Header from "../../components/header";
+import { StoreContext } from "../../utils/store";
+
+import valid from "../login";
 
 function Home() {
-    console.log('OK!')
+  const { user } = useContext(StoreContext);
 
+  console.log(user);
 
   return (
     <Header />
-  )
+  );
 }
 
 export default Home;

@@ -4,7 +4,10 @@ export const Page = styled.div`
   @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
   width: 100%;
   height: 100vh;
-  background-color: #f4f5f9;
+  background: url("https://flowti.com.br/storage/blog/20014320210401606626a7ef187.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -12,14 +15,22 @@ export const Page = styled.div`
 `;
 export const Form = styled.div`
   width: 350px;
-  height: 700px;
-  background-color: #fff;
+  padding: 40px 10px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(16.5px);
+  -webkit-backdrop-filter: blur(16.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 1rem;
-  padding: 15px;
   font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
   align-content: center;
+  box-shadow: 0.4px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+    1px 6.7px 5.3px rgba(0, 0, 0, 0.028), 1.9px 12.5px 10px rgba(0, 0, 0, 0.035),
+    3.4px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+    6.3px 41.8px 33.4px rgba(0, 0, 0, 0.05), 15px 100px 80px rgba(0, 0, 0, 0.07);
 
   .inputs {
     display: flex;
@@ -61,6 +72,8 @@ export const Form = styled.div`
     font-size: 15px;
     font-weight: 500;
     text-align: center;
+    box-shadow: 0px 8px 13px -3px rgba(0, 0, 0, 0.1),
+      0px 5px 23px -3px rgba(0, 0, 0, 0.1);
 
     &:hover {
       background-color: #ff0020;
@@ -71,19 +84,17 @@ export const Form = styled.div`
   }
   .titleLogin {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
     text-align: center;
   }
 
   .titleLogin h1 {
-    margin-top: 40px;
     margin-bottom: 20px;
     font-weight: 400;
   }
 
   .titleLogin span {
+    font-size: 17px;
     font-weight: 300;
     margin-bottom: 20px;
   }
@@ -96,6 +107,86 @@ export const Form = styled.div`
     margin-bottom: 20px;
     margin-right: 40px;
     font-size: 13px;
-    color: #262a33;
+    color: #555;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .inputs span:hover {
+    color: #000;
+  }
+  .hrLeft {
+    display: flex;
+    margin-top: 40px;
+    width: 50px;
+    background-image: linear-gradient(to left, #e00208, transparent);
+    border: 0;
+    height: 1px;
+  }
+  .hrRight {
+    display: flex;
+    margin-top: 40px;
+    width: 50px;
+    background-image: linear-gradient(to right, #e00208, transparent);
+    border: 0;
+    height: 1px;
+  }
+
+  .continueWith {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .continueWith span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    height: 3px;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 12px;
+  }
+
+  .iconWith {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px 0 0;
+    cursor: pointer;
+  }
+
+  .icon {
+    margin: 0 30px;
+    height: 30px;
+    font-size: 50px;
+    transition: 0.2s ease;
+  }
+
+  .icon:hover {
+    transform: translateY(-3px);
+  }
+
+  .registerNow {
+    bottom: 0;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    cursor: pointer;
+    color: #555;
+    transition: 0.3s ease;
+  }
+
+  .registerText {
+    color: #e00208;
+  }
+
+  .registerNow:hover {
+    color: #000;
   }
 `;

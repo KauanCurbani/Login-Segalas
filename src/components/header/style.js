@@ -5,11 +5,11 @@ export const Header = styled.header`
   height: 93px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  border-bottom: 1px solid #555;
+  justify-content: space-between;
 
   img {
-    height: 90%;
+    height: 70%;
+    margin-left: 20px;
   }
   nav ul {
     display: flex;
@@ -20,6 +20,8 @@ export const Header = styled.header`
     margin: 0 10px;
     cursor: pointer;
     transition: all 0.2s;
+    margin: 10px;
+    margin-right: 20px;
 
     &:hover {
       color: #e00208;
@@ -36,5 +38,4 @@ export const Header = styled.header`
       color: #fff;
     }
   }
-
 `;
